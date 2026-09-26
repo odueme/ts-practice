@@ -38,3 +38,25 @@ function longestString(arr:string[]):string | undefined{
     function isEven(num:number):boolean{return num % 2 === 0}
 
     console.log(isEven(2))
+
+
+function reverseString(word:string):string{
+    return word.split("").reverse().join("")
+}
+
+console.log(reverseString("Hello"))
+
+
+function countVowels(word:string):number{
+    let count = 0;
+    const countWord = word.toLowerCase();
+    for (let i= 0; i < countWord.length; i++){
+    if(countWord[i] === "a" || countWord[i] === "e" || countWord[i] === "i" || countWord[i] === "o" || countWord[i] === "u"){
+        count++
+    }
+}
+return count
+}
+
+
+console.log(countVowels("ba ba ba ba lol"))
