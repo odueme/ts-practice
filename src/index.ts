@@ -1,22 +1,40 @@
 // 1. add two numbers
+
+
 function add(a:number, b:number): number {return a + b} 
 
-add(2, 2)
-
-function greet(greeting:string): string{ return greeting}
-
-greet("Hello Stranger")
+console.log(add(2, 2))  
 
 
-function longestString(arr:string[]):string{return  arr.reduce(function (a, b) {
+function greet(name:string): string{ return `Hello there ${name}`}
+
+console.log(greet("Francis"))
+
+
+function longestString(arr:string[]):string | undefined{
+    if (arr.length === 0) {
+        return undefined;
+    }
+   return  arr.reduce(function (a, b) {
         return a.length > b.length ? a : b;
-    })}
+    })
+    
+ }
 
 
-    longestString(["hello", "world", "this", "is", "a", "test"])
+    console.log(longestString([]))
 
 
 
-    function countSentence(sentence :string):number{return sentence.split(" ").length}
+    function countSentence(sentence :string):number{
+        const words = sentence.trim().split(" ").filter(word => word !== "");
+        return words.length;
+    }
 
-    countSentence("This is a test sentence.")
+    console.log(countSentence("Hello      there"))
+
+
+
+    function isEven(num:number):boolean{return num % 2 === 0}
+
+    console.log(isEven(2))
