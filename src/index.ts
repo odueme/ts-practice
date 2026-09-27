@@ -109,3 +109,95 @@ const sortDescending = (arr: number []): number[] => {
 
 
 console.log(sortDescending([5, 1, 3, 2, 4]))
+
+
+
+let user = {
+    name: "Francis",
+};
+
+
+
+function isEmpty(obj: object): boolean {
+    for(let key in obj){
+        return false
+    }
+    return true
+    
+}
+
+console.log(isEmpty(user))
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+const sumSalaries = (salaries: {[key: string]: number}): number => {
+    let total = 0;
+    for(let key in salaries){
+       total += salaries[key]
+    }
+    return total
+}
+
+    console.log(sumSalaries(salaries))
+
+    let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};  
+
+
+const multiply = (salaries: {[key: string]: number | string}): {[key: string]: number | string} => {
+    let total: {[key: string]: number | string} = {};
+    for(let key in salaries){
+        if(typeof salaries[key] === "number"){
+        total[key] = salaries[key] * 2
+        } else{
+            total[key] = salaries[key]
+        }
+        
+    }
+    return total
+}
+
+console.log(multiply(menu))
+
+
+
+const task = {
+  title: "Write the README",
+  status: "todo",
+  done: false,
+  createdAt: "2026-09-27",
+  assignee: {
+    id: 42,
+    name: "Uzoezi",
+    email: "uzoezi@example.com"
+  }
+};
+
+const job ={}
+
+
+const { title, status, done, createdAt, assignee} = task 
+
+
+
+console.log( title, status, done, createdAt, assignee)
+const task2 = {...task, assignee: {...task.assignee}}
+
+task2.done = true
+
+console.log(task2)
+
+function changeObj<T>(obj: T)
+ {
+    return {...obj, done: true}
+}
+
+console.log(changeObj(task))
+
